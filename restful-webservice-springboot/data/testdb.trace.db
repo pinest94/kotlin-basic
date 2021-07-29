@@ -1,0 +1,39 @@
+2021-07-29 16:54:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:04:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:07:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:07:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+select * from messages [42102-200]
+2021-07-29 17:08:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:08:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:09:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+select * from messages [42102-200]
+2021-07-29 17:09:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:12:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:12:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+select * from messages [42102-200]
+2021-07-29 17:18:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+INSERT INTO "MESSAGES" ("ID", "TEXT") VALUES (?, ?) [42102-200]
+2021-07-29 17:18:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+select * from messages [42102-200]
+2021-07-29 17:18:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MESSAGES" not found; SQL statement:
+select * from messages [42102-200]
