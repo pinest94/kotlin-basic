@@ -1,7 +1,7 @@
 package com.pinest94.springwebfluxwithkotlin.repository
 
-import com.pinest94.springwebfluxwithkotlin.Todo
-import org.springframework.data.jpa.repository.JpaRepository
+import com.pinest94.springwebfluxwithkotlin.domain.Todo
+import org.springframework.data.repository.reactive.ReactiveCrudRepository
 
-interface TodoRepository : JpaRepository<Todo, Long>{
+interface TodoRepository : ReactiveCrudRepository<Todo, Long>{
 }

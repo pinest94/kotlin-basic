@@ -12,9 +12,9 @@ class TodoRouter(private val handler: TodoHandler) {
     @Bean
     fun routerFunction() = nest(path("/todos"), router {
         listOf(
-            GET("/", handler::getAll),
+            GET("", handler::getAll),
             GET("/{id}", handler::getById),
-            POST("/", handler::save),
+            POST("", handler::save),
             PUT("/{id}/done", handler::done),
             DELETE("/{id}", handler::delete)
         )

@@ -27,6 +27,8 @@ dependencies {
     runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
+    implementation("dev.miku:r2dbc-mysql:0.8.2.RELEASE")
 }
 
 tasks.withType<KotlinCompile> {
