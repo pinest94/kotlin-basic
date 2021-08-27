@@ -75,6 +75,7 @@ class NetworkResponseCall<S : Any, E : Any>(
 
     override fun cancel() = delegate.cancel()
 
+    // Deprecated sync method -> only using async method
     override fun execute(): Response<NetworkResponse<S, E>> {
         throw UnsupportedOperationException("NetworkResponseCall doesn't support execute")
     }

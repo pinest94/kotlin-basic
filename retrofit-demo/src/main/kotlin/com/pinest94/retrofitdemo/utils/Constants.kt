@@ -4,12 +4,12 @@ object Constants {
 
 }
 
-enum class RESPONSE_STATE {
+enum class ResponseState {
     OKAY,
     FAIL
 }
 
-object TODO_API {
+object TodoUrl {
     const val BASE_URL = "http://localhost:8080/"
     const val RETRIEVE_TODO = "todos/{id}"
     const val RETRIEVE_TODO_LIST = "todos"
