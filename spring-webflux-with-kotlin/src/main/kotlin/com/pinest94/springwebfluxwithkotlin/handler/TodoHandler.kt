@@ -28,7 +28,7 @@ class TodoHandler(private val repo: TodoRepository) {
 
     fun save(req: ServerRequest): Mono<ServerResponse> =
         repo.saveAll(req.bodyToMono(Todo::class.java))
-            .flatMap { created(URI.create("/todos/${it.id}")).build() }
+            .flatMap { ok().body(Mono.just(it)) }
             .next()
 
     fun done(req: ServerRequest): Mono<ServerResponse> =
