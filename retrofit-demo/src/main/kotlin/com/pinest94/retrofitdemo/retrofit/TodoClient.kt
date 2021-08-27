@@ -19,7 +19,6 @@ class TodoClient(
         Retrofit.Builder()
             .baseUrl(TODO_API.BASE_URL)
             .addCallAdapterFactory(NetworkResponseAdapterFactory())
-            //.addConverterFactory(GsonConverterFactory.create())
             .addConverterFactory(JacksonConverterFactory.create(todoObjectMapper))
             .addConverterFactory(ScalarsConverterFactory.create())
             .build()
