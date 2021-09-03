@@ -1,13 +1,14 @@
 package collections
 
 import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.lang.NumberFormatException
 
 fun main() {
-    val reader = BufferedReader(InputStreamReader(System.`in`))
-    val numbers = readNumbers(reader)
-    addValidNumbers(numbers)
+    val list = listOf("hansol", "sungjae", "jongyeon")
+    println(joinToString(collection = list))
+
+//    val reader = BufferedReader(InputStreamReader(System.`in`))
+//    val numbers = readNumbers(reader)
+//    addValidNumbers(numbers)
 }
 
 fun readNumbers(reader: BufferedReader): List<Int?> {
@@ -27,4 +28,21 @@ fun addValidNumbers(numbers: List<Int?>) {
 
     println("valid : ${sumOfValidNumbers.sum()}")
     println("invalid : ${numbers.size - sumOfValidNumbers.size}")
+}
+
+fun <T> joinToString(
+    collection: Collection<T>,
+    separator: String = ", ",
+    prefix: String = "",
+    postfix: String = ""
+): String {
+    val result = StringBuilder(prefix)
+
+    for((index, element) in collection.withIndex()) {
+        if(index > 0) result.append(separator)
+        result.append(element)
+    }
+
+    result.append(postfix)
+    return result.toString()
 }

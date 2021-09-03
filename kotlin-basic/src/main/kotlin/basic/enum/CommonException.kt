@@ -1,6 +1,6 @@
-package enum
+package basic.enum
 
-import enum.CommonException.*
+import basic.enum.CommonException.*
 
 enum class CommonException(val code: Int, val message: String) {
     OK(200, "OK"),
