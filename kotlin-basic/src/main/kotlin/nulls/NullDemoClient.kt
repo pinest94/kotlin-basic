@@ -1,5 +1,7 @@
 package nulls
 
+import `class`.AccountValidation
+
 fun main() {
     val p1 = NullDemo.Person("Dmitry", "Jemero")
     var p2 = NullDemo.Person("Dmitry", "Jemerov")
