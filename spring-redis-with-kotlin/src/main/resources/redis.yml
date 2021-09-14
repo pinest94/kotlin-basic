@@ -1,0 +1,3 @@
+redis:
+  password: rla13628747^^redis
+  master: localhost
