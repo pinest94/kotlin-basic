@@ -2,6 +2,7 @@ package com.pinest94.springrediswithkotlin.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.pinest94.springrediswithkotlin.domain.Message
+import com.pinest94.springrediswithkotlin.domain.Template
 import com.pinest94.springrediswithkotlin.util.objectMapper
 import io.lettuce.core.SocketOptions
 import io.lettuce.core.TimeoutOptions
@@ -10,11 +11,16 @@ import io.lettuce.core.cluster.ClusterTopologyRefreshOptions
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.data.redis.connection.*
+import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory
+import org.springframework.data.redis.connection.RedisPassword
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration
 import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory
 import org.springframework.data.redis.core.ReactiveRedisTemplate
-import org.springframework.data.redis.serializer.*
+import org.springframework.data.redis.serializer.GenericToStringSerializer
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer
+import org.springframework.data.redis.serializer.RedisSerializationContext
+import org.springframework.data.redis.serializer.RedisSerializer
 import java.time.Duration
 
 @EnableConfigurationProperties(RedisProperties::class)
@@ -90,6 +96,13 @@ class RedisConfiguration(
     fun messageReactiveRedisTemplate(
         reactiveRedisConnectionFactory: ReactiveRedisConnectionFactory
     ): ReactiveRedisTemplate<String, Message> {
+        return getReactiveRedisTemplate(reactiveRedisConnectionFactory, objectMapper)
+    }
+
+    @Bean
+    fun templateReactiveRedisTemplate(
+        reactiveRedisConnectionFactory: ReactiveRedisConnectionFactory
+    ): ReactiveRedisTemplate<String, Template> {
         return getReactiveRedisTemplate(reactiveRedisConnectionFactory, objectMapper)
     }
 }

@@ -1,16 +1,11 @@
 package com.pinest94.springrediswithkotlin.domain
 
 data class Message(
-    val mid: String,
-    val messageId: String,
-    val cp: String,
-    val contents: String,
-    val landingPage: String?,
-    val iconImage: String?,
-    val exposureOrder: Int,
-    val exposureFlag: Boolean,
-    val validationFlag: Boolean,
-    val createdAt: String,
-    val fedAt: String,
-    val expiredAt: String
+    val id: String,
+    val templateId: Int,
+    val params: Map<String, Any>,
+    val exposedAt: Long,
+    val createdAt: Long,
+    val fedAt: Long,
+    val expiredAt: Long
 )

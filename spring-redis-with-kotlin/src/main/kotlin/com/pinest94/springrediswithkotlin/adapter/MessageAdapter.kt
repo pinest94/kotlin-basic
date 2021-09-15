@@ -18,9 +18,12 @@ class MessageAdapter(
     }
 
     suspend fun get(mid: String): List<Message> {
-        return reactiveRedisTemplate.opsForZSet()
+        val result =  reactiveRedisTemplate.opsForZSet()
             .range(key(mid), Range.open(0, -1))
             .asFlow()
             .toList()
+
+        println(result.toString())
+        return result
     }
 }
