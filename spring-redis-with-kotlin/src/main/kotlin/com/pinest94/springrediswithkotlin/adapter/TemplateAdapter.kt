@@ -14,18 +14,19 @@ class TemplateAdapter(
     private val objectMapper: ObjectMapper
 ) {
     private val key: String = "cms:templates"
+    private val collectionKey: String = "devices"
 
     private fun key(templateId: String): String {
         return "$key:$templateId"
     }
 
     suspend fun get(templateId: String): Template {
-        println(key(templateId))
+        // TODO: entry -> 한번에 map형태로 변환방법 있는지
         val result = reactiveRedisTemplate.opsForHash<String, String>().entries(key(templateId)).asFlow().toList()
         var map = mutableMapOf<String, Any?>()
         for((k, v) in result) {
-            println("$k : $v")
-            if(k == "devices") {
+            // TODO: 이렇게 if문을 꼭 써야하는지
+            if(k == collectionKey) {
                 val list: List<String> = objectMapper.readValue(v, TypeFactory.defaultInstance().constructCollectionType(List::class.java, String::class.java))
                 map[k] = list
                 continue

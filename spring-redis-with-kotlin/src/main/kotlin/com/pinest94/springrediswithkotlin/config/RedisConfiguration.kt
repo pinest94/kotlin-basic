@@ -17,6 +17,7 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration
 import org.springframework.data.redis.connection.lettuce.LettuceClientConfiguration
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory
 import org.springframework.data.redis.core.ReactiveRedisTemplate
+import org.springframework.data.redis.core.ReactiveZSetOperations
 import org.springframework.data.redis.serializer.GenericToStringSerializer
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer
 import org.springframework.data.redis.serializer.RedisSerializationContext
@@ -95,8 +96,8 @@ class RedisConfiguration(
     @Bean
     fun messageReactiveRedisTemplate(
         reactiveRedisConnectionFactory: ReactiveRedisConnectionFactory
-    ): ReactiveRedisTemplate<String, Message> {
-        return getReactiveRedisTemplate(reactiveRedisConnectionFactory, objectMapper)
+    ): ReactiveZSetOperations<String, Message> {
+        return getReactiveRedisTemplate<Message>(reactiveRedisConnectionFactory, objectMapper).opsForZSet()
     }
 
     @Bean
