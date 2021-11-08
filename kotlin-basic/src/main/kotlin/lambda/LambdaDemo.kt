@@ -28,5 +28,3 @@ fun main() {
 
     println(corpList.flatMap { it.sonCorpList })
 }
-
-data class Corp(val representative: String, val sonCorpList: List<String>)
