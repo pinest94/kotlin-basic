@@ -1,0 +1,26 @@
+# 특정 확장자 제외
+*.bin
+*.lock
+*.class
+
+# 특정 폴더 제외
+kotlin-basic/**/.idea
+kotlin-basic/**/build
+kotlin-basic/**/out
+
+restful-webservice-springboot/**/.idea
+restful-webservice-springboot/**/build
+restful-webservice-springboot/**/out
+
+retrofit-demo/**/.idea
+retrofit-demo/**/build
+retrofit-demo/**/out
+
+spring-webflux-with-kotlin/**/.idea
+spring-webflux-with-kotlin/**/build
+spring-webflux-with-kotlin/**/out
+
+spring-redis-with-kotlin/**/.idea
+spring-redis-with-kotlin/**/build
+spring-redis-with-kotlin/**/gradle
+

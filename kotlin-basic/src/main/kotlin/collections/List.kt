@@ -4,7 +4,7 @@ import java.io.BufferedReader
 
 fun main() {
     val list = listOf("hansol", "sungjae", "jongyeon")
-    println(joinToString(collection = list))
+    println(list.joinToString(prefix = "{", postfix = "}"))
 
 //    val reader = BufferedReader(InputStreamReader(System.`in`))
 //    val numbers = readNumbers(reader)
@@ -30,15 +30,14 @@ fun addValidNumbers(numbers: List<Int?>) {
     println("invalid : ${numbers.size - sumOfValidNumbers.size}")
 }
 
-fun <T> joinToString(
-    collection: Collection<T>,
+fun <T> Collection<T>.joinToString(
     separator: String = ", ",
     prefix: String = "",
     postfix: String = ""
 ): String {
     val result = StringBuilder(prefix)
 
-    for((index, element) in collection.withIndex()) {
+    for((index, element) in withIndex()) {
         if(index > 0) result.append(separator)
         result.append(element)
     }
