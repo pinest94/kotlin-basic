@@ -30,5 +30,6 @@ class StockTest {
         stock.order(1_300_000, OrderType.BUY)
         stock.order(1_500_000, OrderType.BUY)
         stock.order(1_200_000, OrderType.SELL)
+        stock.order(2_400_000, OrderType.SELL)
     }
 }

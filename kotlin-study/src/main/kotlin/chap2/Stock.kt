@@ -35,16 +35,16 @@ class Stock(
     }
 
     private fun calculateGapValue() {
-        if(previousMarketPrice == 0L) {
-            println("이전 데이터가 없습니다.")
-        } else {
-            if(marketPrice >= previousMarketPrice) {
+        when {
+            previousMarketPrice == 0L -> println("이전 데이터가 없습니다.")
+            marketPrice >= previousMarketPrice -> {
                 gapPrice = marketPrice - previousMarketPrice
-                gapRate = (gapPrice.toDouble() / previousMarketPrice.toDouble())
+                gapRate = (gapPrice.toDouble() / previousMarketPrice.toDouble()) * 100
                 println("▲ $gapPrice  ${String.format("%.2f", gapRate)}%")
-            } else {
+            }
+            else -> {
                 gapPrice = previousMarketPrice - marketPrice
-                gapRate = (gapPrice.toDouble() / previousMarketPrice.toDouble())
+                gapRate = (gapPrice.toDouble() / previousMarketPrice.toDouble()) * 100
                 println("▼ $gapPrice  -${String.format("%.2f", gapRate)}%")
             }
         }
