@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="chap2.StockTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-01T03:37:01" hostname="AD01918244.local" time="0.024">
+  <properties/>
+  <testcase name="orderTest()" classname="chap2.StockTest" time="0.024"/>
+  <system-out><![CDATA[이전 데이터가 없습니다.
+매수 주문이 완료되었습니다. 1000000 KRW
+▲ 200000  0.20%
+매수 주문이 완료되었습니다. 1200000 KRW
+▲ 100000  0.08%
+매수 주문이 완료되었습니다. 1300000 KRW
+▲ 200000  0.15%
+매수 주문이 완료되었습니다. 1500000 KRW
+▼ 300000  -0.20%
+매도 주문이 완료되었습니다. 1200000 KRW
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
