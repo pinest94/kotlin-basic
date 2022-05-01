@@ -1,4 +1,4 @@
-package com.linecorp.wallet.wca.core.config
+package com.pinest94.springrediswithkotlin.config
 
 import org.springframework.cache.CacheManager
 import org.springframework.cache.annotation.EnableCaching
@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration
 class LocalCacheConfig {
 
     @Bean
-    fun cacheManager() : CacheManager {
+    fun cacheManager(): CacheManager {
         val simpleCacheManager = SimpleCacheManager()
-        simpleCacheManager.setCaches(listOf(ConcurrentMapCache("wca-cache")))
+        simpleCacheManager.setCaches(listOf(ConcurrentMapCache("cache")))
         return simpleCacheManager
     }
 }

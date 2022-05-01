@@ -30,7 +30,11 @@ class TodoClient(
         return when (val networkResponse = client.getTodo(id!!)) {
             is NetworkResponse.Success -> networkResponse.body
             is NetworkResponse.ApiError -> TodoDto(0L, "api error", false)
-            is NetworkResponse.NetworkError, is NetworkResponse.UnknownError -> TodoDto(0L, "unknown error", false)
+            is NetworkResponse.NetworkError, is NetworkResponse.UnknownError -> TodoDto(
+                0L,
+                "unknown error",
+                false
+            )
         }
     }
 

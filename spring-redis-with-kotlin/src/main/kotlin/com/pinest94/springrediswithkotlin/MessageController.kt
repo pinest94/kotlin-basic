@@ -16,6 +16,6 @@ class MessageController(private val messageAdapter: MessageAdapter) {
     suspend fun getMessages(
         @RequestHeader("X-Line-Mid") mid: String
     ): List<Message> {
-       return messageAdapter.get(mid)
+        return messageAdapter.get(mid)
     }
 }
