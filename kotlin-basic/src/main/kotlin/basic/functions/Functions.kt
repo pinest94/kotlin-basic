@@ -10,13 +10,13 @@ fun main() {
 
 fun printName(name: String) = "Hello, $name"
 
-fun String.lastChar(): Char = get(length-1)
+fun String.lastChar(): Char = get(length - 1)
 
 open class View {
     open fun click() = println("View Clicked")
 }
 
-open class Button: View() {
+open class Button : View() {
     override fun click() = println("Button Clicked")
 }
 

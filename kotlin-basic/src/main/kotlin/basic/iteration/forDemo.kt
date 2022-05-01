@@ -10,7 +10,7 @@ fun main() {
     map.put("sungjae", "sungjae@naver.com")
     map.put("jongyeon", "jongyeon@naver.com")
 
-    for((key, value) in map) {
+    for ((key, value) in map) {
         println("$key : $value")
     }
 }

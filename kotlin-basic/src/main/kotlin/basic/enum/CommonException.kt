@@ -11,7 +11,7 @@ enum class CommonException(val code: Int, val message: String) {
     fun getExceptionMessage() = "$code : $message"
 }
 
-fun getMessage(commonException: CommonException) = when(commonException) {
+fun getMessage(commonException: CommonException) = when (commonException) {
     OK, CREATED -> "SUCCESS"
     NOT_FOUND -> "INPUT ARGUMENT ERROR"
     INTERNAL_ERROR -> "SERVER ERROR"

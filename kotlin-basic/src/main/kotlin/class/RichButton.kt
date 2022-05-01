@@ -16,12 +16,13 @@ abstract class Validation {
     open fun checkId() {
         println("check id")
     }
+
     fun checkPassword() {
         println("check password")
     }
 }
 
-open class AccountValidation: Validation() {
+open class AccountValidation : Validation() {
     override fun checkNation() {
         println("check nation")
     }

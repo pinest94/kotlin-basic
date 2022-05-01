@@ -37,8 +37,8 @@ fun <T> Collection<T>.joinToString(
 ): String {
     val result = StringBuilder(prefix)
 
-    for((index, element) in withIndex()) {
-        if(index > 0) result.append(separator)
+    for ((index, element) in withIndex()) {
+        if (index > 0) result.append(separator)
         result.append(element)
     }
 
