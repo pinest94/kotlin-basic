@@ -9,9 +9,6 @@ data class Point(val x: Int, val y: Int) {
         return Point((x * scale).toInt(), (y * scale).toInt())
     }
 
-    operator fun plusAssign(value: Int) : Point {
-        return Point(x+=value, y+=value)
-    }
 }
 
 fun main() {
