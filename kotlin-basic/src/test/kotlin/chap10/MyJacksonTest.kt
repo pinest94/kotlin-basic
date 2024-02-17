@@ -28,6 +28,19 @@ class MyJacksonTest {
     }
 
     @Test
+    fun deserializeTest2() {
+        val json = """
+            {
+                "title": "Peek-2",
+                "author": {
+                    "name": "andrew"
+                }
+        """.trimIndent()
+        val book = myJackson.deserialize<Book>(json)
+        println(book)
+    }
+
+    @Test
     fun serializeTest() {
         val person = Person(
             name = "Andrew",

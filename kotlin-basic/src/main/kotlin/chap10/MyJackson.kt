@@ -1,17 +1,17 @@
 package chap10
 
+import chap10.annotation.CustomSerializer
 import chap10.annotation.JsonExclude
 import chap10.annotation.JsonName
+import chap10.serialize.ValueSerializer
 import collections.joinToString
+import kotlin.reflect.KProperty
 import kotlin.reflect.KProperty1
+import kotlin.reflect.full.createInstance
 import kotlin.reflect.full.findAnnotation
 import kotlin.reflect.full.memberProperties
 
 class MyJackson {
-
-    fun deserialize(personJsonData: String): Any {
-        TODO("Not yet implemented")
-    }
 
     fun serialize(obj: Any): String = buildString { serializeObject(obj) }
 
@@ -32,20 +32,32 @@ class MyJackson {
     }
 
     private fun StringBuilder.serializeProperty(
-        props: KProperty1<Any, *>, obj: Any
+        prop: KProperty1<Any, *>, obj: Any
     ) {
-        serializeString(props)
+        val name = prop.findAnnotation<JsonName>()?.value ?: prop.name
+        serializeString(name)
         append(": ")
-        serializePropertyValue()
+
+        val value = prop.get(obj)
+        val jsonValue = prop.getSerializer()?.toJsonValue(value) ?: value
+        serializePropertyValue(jsonValue)
     }
 
-    private fun StringBuilder.serializePropertyValue() {
+    private fun serializePropertyValue(jsonValue: Any?) {
         TODO("Not yet implemented")
     }
 
-    private fun serializeString(props: KProperty1<Any, *>): String {
-        val jsonNameAnn = props.findAnnotation<JsonName>()
-        return jsonNameAnn?.value ?: props.name
+    private fun serializeString(name: String) {
+
+    }
+
+    fun KProperty<*>.getSerializer(): ValueSerializer<Any?>? {
+        val customSerializerAnn = findAnnotation<CustomSerializer>() ?: return null
+        val serializerClass = customSerializerAnn.serializerClass
+        val valueSerializer = serializerClass.objectInstance ?: serializerClass.createInstance()
+
+        @Suppress("UNCHECKED_CAST")
+        return valueSerializer as ValueSerializer<Any?>
     }
 
 
